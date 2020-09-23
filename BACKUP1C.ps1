@@ -8,11 +8,11 @@ $listIb = @('IB1','IB2','IB3')
 #Start of the backup cycle
 foreach ($Base in $listIb) {
 	#Create folder for backups
-	New-Item -Path "\\thecus\backups\DT\$Base" -ItemType Directory -Force
+	New-Item -Path "\\share\backups\DT\$Base" -ItemType Directory -Force
 	#Variables
 	$countCheck = 0
 	$DateTime = Get-Date -UFormat "%d_%m_%Y_%H-%M"
-	$PatchBackup = "\\thecus\backups\DT\$Base" + "\" + $Base + "_" + $DateTime + ".dt"
+	$PatchBackup = "\\share\backups\DT\$Base" + "\" + $Base + "_" + $DateTime + ".dt"
 	$1cexe = '"C:\Program Files\1cv8\common\1cestart.exe"'
 	$BaseServer = "/Ssrvdb\" + $Base
 	$AdminLogin = '"/Nuseruser"'
